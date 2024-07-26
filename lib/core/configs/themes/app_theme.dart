@@ -15,7 +15,7 @@ class AppTheme{
         foregroundColor: Colors.white,
         textStyle: const TextStyle(fontSize: 20,fontWeight: FontWeight.bold),
         shape: RoundedRectangleBorder(
-          borderRadius: BorderRadius.circular(30)
+          borderRadius: BorderRadius.circular(20)
         )
       )
     )
