@@ -26,16 +26,16 @@ class MyApp extends StatelessWidget {
       providers: [
         BlocProvider(create: (_) => ThemeCubit())
       ],
-      child: BlocBuilder<ThemeCubit,ThemeMode>(
-        builder: (context,mode) => MaterialApp(
-        debugShowCheckedModeBanner: false,
-        title: 'Spotify',
-        theme: AppTheme.lightTheme,
-        darkTheme: AppTheme.darkTheme,
-        home: const SplashPage(),
+      child: BlocBuilder<ThemeCubit, ThemeMode>(
+        builder: (context, mode) => MaterialApp(
+          debugShowCheckedModeBanner: false,
+          title: 'Spotify',
+          theme: AppTheme.lightTheme,
+          darkTheme: AppTheme.darkTheme,
+          themeMode: mode,
+          home: const SplashPage(),
+        ),
       ),
-      )
     );
   }
 }
-
