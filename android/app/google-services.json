@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "93841452294",
+    "project_id": "spotify-redesigned",
+    "storage_bucket": "spotify-redesigned.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:93841452294:android:1fccfef0042eb0e7d94287",
+        "android_client_info": {
+          "package_name": "com.example.spotify"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCtIo4ZKVMZCfnVV_6LFsee8AaKFxLNa8g"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
