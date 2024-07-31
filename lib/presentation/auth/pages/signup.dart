@@ -1,12 +1,21 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:spotify/common/widgets/appbar/app_bar.dart';
 import 'package:spotify/common/widgets/button/basic_app_button.dart';
 import 'package:spotify/core/configs/assets/app_vector.dart';
+import 'package:spotify/data/models/auth/create_user_req.dart';
+import 'package:spotify/domain/usecases/auth/signup.dart';
 import 'package:spotify/presentation/auth/pages/signin.dart';
 
+import '../../../service_locator.dart';
+
 class SigupPage extends StatelessWidget {
-  const SigupPage({super.key});
+  SigupPage({super.key});
+
+  final TextEditingController _fullName = TextEditingController();
+  final TextEditingController _email = TextEditingController();
+  final TextEditingController _password = TextEditingController();
 
   @override
   Widget build(BuildContext context) {
@@ -34,7 +43,14 @@ class SigupPage extends StatelessWidget {
             const SizedBox(height: 20,),
             _passwordField(context),
             const SizedBox(height: 30,),
-            BasicAppButton(onPressed: (){}, title: 'Create Account')
+            BasicAppButton(onPressed: ()async{
+              var result = await sl<SignupUseCase>().call(
+                params: CreateUserReq(
+                    fullName: fullName,
+                    email: email,
+                    password: password)
+              )
+            }, title: 'Create Account')
           ],
         ),
       ),
